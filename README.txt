@@ -26,12 +26,15 @@ Building a Debian Filesystem
 The scripts directory contains some tools which you use to build a Debian filesystem
 for the Chronos Camera as follows:
  * Install the `multistrap` and `qemu-user-static` packages in your operating system.
- * Run `scripts/chronos-debootstrap.sh` to create a new root filesystem at `$(pwd)/debian.`
+ * Run 
+ `./scripts/chronos-debootstrap.sh` 
+ to create a new root filesystem at `$(pwd)/debian.`
    This script will require root privileges to chroot and configure the new filesystem.
- * Insert a micro-SD card of at least 4GB into your computer and locate the block
+ * Insert a micro-SD card of at least 4GB into your computer and locate (e.g. using `dmesg`) the block
    device (eg: `/dev/sdb`).
- * Run `scripts/mksd-format.sh <block device>` to partition the micro-SD card and copy
-   the bootloader and root filesystem onto the card. Note that this script will destroy all
+ * Run 
+ `./scripts/mksd-format.sh <block device>` 
+ to partition the micro-SD card and copy the bootloader and root filesystem onto the card. Note that this script will destroy all
    data on the SD card.
  * Remove the micro-SD card, and insert it into the slot on the bottom of the Chronos.
  * Power on the camera, and enjoy.
